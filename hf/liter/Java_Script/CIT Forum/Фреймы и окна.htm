@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0069)http://www.ncn.ru/~dimas/libz/lib_prog/javascript/js_tut/glava2_7.htm -->
+<HTML><HEAD><TITLE>Фреймы и окна</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+<STYLE type=text/css>A.noneline {
+	FONT-FAMILY: Arial, Serif; TEXT-DECORATION: none
+}
+FONT.arial {
+	FONT-FAMILY: Arial, Serif
+}
+TD.arial {
+	FONT-FAMILY: Arial, Serif
+}
+TH.arial {
+	FONT-FAMILY: Arial, Serif
+}
+PRE {
+	COLOR: navy; FONT-FAMILY: Monospace
+}
+SAMP {
+	COLOR: navy; FONT-FAMILY: Monospace
+}
+TT {
+	COLOR: navy; FONT-FAMILY: Monospace
+}
+VAR {
+	COLOR: navy; FONT-FAMILY: Monospace
+}
+</STYLE>
+
+<META content="MSHTML 5.00.3700.6699" name=GENERATOR></HEAD>
+<BODY aLink=#ff0000 bgColor=#fff5ee link=#ff0000 text=#000000 
+vLink=#a52a2a><BASEFONT>
+<CENTER>
+<TABLE border=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR vAlign=top>
+    <TD class=arial><A href="http://www.citforum.ru/"><IMG 
+      alt="Server for Information Technologies" border=0 height=50 
+      src="Фреймы и окна.files/logo3D.gif" width=150></A><BR></TD>
+    <TD align=right class=arial><FONT size=-2>Сервер поддерживается<BR><A 
+      class=noneline href="http://www.citmgu.ru/">Центром Информационных 
+      Технологий</A><BR>(095) 932-9212, 932-9213, 939-0783<BR>E-mail: <A 
+      class=noneline 
+      href="mailto:info@citforum.ru?Subject='From page topic CIT-FORUM'">mailto:info@citforum.ru?Subject='From 
+      page topic CIT-FORUM'</A></FONT> </TD>
+  <TR>
+    <TH class=arial colSpan=2><FONT color=#000080 size=2><A class=noneline 
+      href="http://www.citforum.ru/">Сервер Информационных Технологий</A> 
+      содержит море(!) аналитической информации</FONT> 
+      <HR noShade>
+    </TH></TR></TBODY></TABLE></CENTER>
+<H4>2.7. Фреймы и окна</H4>
+<P align=justify>При работе с фреймами и окнами в предыдущих версиях JavaScript 
+постоянно приходилось отслеживать последовательность открытия окон и фреймов, 
+для того, чтобы аккуратно их потом закрывать. На некоторых неточностях работы с 
+окнами были основаны так называемые mail-bombs. Суть этих "подарков" заключалась 
+в том, что если пользователь по почте принимает документ, который состоит только 
+из одной команды: <PRE>	window.close()</PRE>
+<P align=justify>то система не спрашивая пользователя закрывала текущее окно, а 
+в этот момент таким окном является окно электронной почты. Теперь, перед тем как 
+что-либо закрыть, система будет спрашивать разрешения. Правда, опять не всегда. 
+Если в момент получения команды на закрытие окна на экране только одно окно 
+Navgator, то система его закроет без каких-либо комментариев. 
+<P align=justify>Однако, работа с окнами и фреймами на этом не исчерпывается. 
+Во-первых, в систему введено новое свойство opener, которое определено для 
+текущего окна или фрейма, и методы blur и focus распространены на работу с 
+окнами. Свойство opener определяет окно документа, который вызвал открытие окна 
+текущего документа. Свойство определено для любого окна и фрейма. Необходимо 
+выполнить некоторые функции по отношению к окну, открывшему данное окно, и можно 
+использовать выражение типа: <PRE>	window.opener.[method]</PRE>
+<P align=justify>Например, если требуется закрыть окно-предшественник, то можно 
+просто выполнить метод close: <PRE>	window.opener.close()</PRE>
+<P align=justify>Точно таким же способом можно изменить содержание этого окна 
+при помощи методов write или writeln. Можно менять и другие свойства объектов в 
+окне предшественнике. Следующий пример взят из дополнений к спецификации 
+JavaScript: <PRE>	window.opener.document.bgColor='cyan'</PRE>
+<P align=justify>В данном случае для окна предшественника определен светло 
+голубой цвет в качестве цвета фона. Но самым замечательным является то, что 
+предшественника можно менять. Это значит, что автор получает возможность 
+открывать и закрывать окна не строго иерархической последовательности, а в 
+произвольном порядке. Управление многооконным интерфейсом в этом случае 
+становится более гибким: <PRE>	window.opener= new_window
+	window.opener = null</PRE>
+<P align=justify>Первый пример переназначает для текущего окна 
+окно-предшественник, в то время как второй вообще защищает предшественника от 
+каких-либо действий. Все, что было сказано об окнах, распространяется и на 
+фреймы, которые являются просто частным случаем окна. При работе с фреймами 
+часто фрейм может быть порожден путем разбиения другого фрейма на части. Если 
+при этом потребуется обратиться к окну-предшественнику фрейма-предшественника, 
+то свойство opener в этом случае незаменимо. Разработчики языка следуют за 
+пожеланиями авторов Websit'ов и практикой применения JavaScrip, которая на 
+начальной стадии разработки языка не была столь очевидной. Кроме обращения к 
+различным свойствам окон и фреймов разработчики расширили действие методов blur 
+и focus с фреймов до окон. Теперь не только фрейм, но и окно может быть сделано 
+текущем с использованием метода focus или, наоборот, переведено в фон при помощи 
+метода blur. В ряде случаев, при порождении нескольких страниц, например, 
+обращение к этим функциям бывает довольно полезным. 
+<P>
+<CENTER>
+<P><FONT size=-1><A 
+href="http://www.ncn.ru/~dimas/libz/lib_prog/javascript/js_tut/glava2_6.htm">Назад</A> 
+| <A 
+href="http://www.ncn.ru/~dimas/libz/lib_prog/javascript/js_tut/index.htm">Содержание</A> 
+| <A 
+href="http://www.ncn.ru/~dimas/libz/lib_prog/javascript/js_tut/glava2_8.htm">Вперед</A></FONT></CENTER></P>
+<P></P>
+<HR noShade>
+
+<CENTER><FONT class=arial size=1>Comments: <A class=noneline 
+href="mailto:info@citmgu.ru?Subject='From bottom of CIT FORUM'">mailto:info@citmgu.ru?Subject='From 
+bottom of CIT FORUM'</A><BR>Copyright © <A class=noneline 
+href="http://www.citmgu.ru/">CIT</A> </FONT></CENTER></BASEFONT></BODY></HTML>

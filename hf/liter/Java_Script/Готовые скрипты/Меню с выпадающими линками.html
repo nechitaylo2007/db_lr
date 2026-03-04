@@ -1,0 +1,161 @@
+﻿<html>
+<head><title>Menu</title>
+<style type="text/css">
+	a{
+		font-family: Verdana, Arial; 
+		color: white; 
+		text-decoration: none; 
+		font-weight:bold; 
+	}
+	a:hover{ 
+		color: white; 
+		text-decoration: none; 
+		font-weight:bold; 
+		background-color: #FFCC99;
+	}
+	#box{
+		position:absolute;
+		visibility:hidden;
+		layer-background-color:red 
+	}
+	#blackbox{ 
+		font-family: Verdana, Arial;
+		font-size:8pt; 
+		color: white; 
+		background-color: #000000; 
+		text-decoration: none 
+	}
+	#mnubar{ 
+		font-family: Verdana, Arial; 
+		font-size:10pt; 
+		color: white; 
+		font-weight:bold; 
+		text-decoration: none 
+	} 
+</style>
+
+<!--*********************************************************************************************************************************-->
+<script language="JavaScript">
+	ns=window.navigator.appName == "Netscape"
+	ie=window.navigator.appName == "Microsoft Internet Explorer"
+
+	function openIt(x) 
+	{
+		if(ns) 
+		{
+			showbox= document.layers[x+1]
+			showbox.visibility = "show"
+			showbox.top=44
+			var items = 5 
+			for (i=1; i<=items; i++) 
+			{
+				elopen=document.layers[i]
+				if (i != (x + 1)) 
+				{ 
+					elopen.visibility = "hide" 
+				}
+			}
+		} 
+		if(ie) 
+		{
+			curEl = event.toElement
+			curEl.style.background = "silver" 
+			showBox = document.all.box[x];
+			showBox.style.visibility = "visible";
+			showBox.style.top = 40;
+			var items = 5
+			for (i=0; i<items; i++) 
+			{
+				elOpen=document.all.box[i]
+				barEl=document.all.mnubar[i]
+				if (i != x)
+				{ 
+					elOpen.style.visibility = "hidden" 
+					barEl.style.background = "#000000"
+				}
+			}
+		}
+	}
+
+	function closeIt() 
+	{
+		var items = 5 
+		for (i=0; i<items; i++) 
+		{
+			if(ie)
+			{
+				document.all.box[i].style.visibility = "hidden"
+				barEl=document.all.mnubar[i]
+				barEl.style.background = "#000000" 
+			}
+			if(ns){ document.layers[i+1].visibility = "hide"} 
+		}
+	}
+</script>
+<!--*********************************************************************************************************************************-->
+
+</head>
+<body bgcolor="36456c" text="white" link="white" vlink="white" marginwidth="0" marginheight="0" topmargin="0" leftmargin="0">
+	<table border="0" cellpadding="0" cellspacing="0" width="331" bgcolor="#000000" id=mainmenu height="40" align="center">
+		<tr><td align="center" bgcolor="36456c" colspan="5"><b>Меню ссылок</b></td></tr>
+		<tr><td align="center" nowrap width="100"><a href="#" onmouseover="openIt(0)" id=mnubar>Гостевая</a></td>
+			<td align="center" nowrap width="100"><a href="#" onmouseover="openIt(1)" id=mnubar>Проекты</a></td>
+			<td align="center" nowrap width="100"><a href="#" onmouseover="openIt(2)" id=mnubar>WEB-дизайн</a></td>
+			<td align="center" nowrap width="100"><a href="#" onmouseover="openIt(3)" id=mnubar>Досуг</a></td>
+			<td align="center" nowrap width="100"> <a href="#" onmouseover="openIt(4)" id=mnubar>Заключение</a></td>
+		</tr>
+	</table><br><br>
+	<div onMouseOver="closeIt()" >
+		<layer onMouseOver="closeIt()"></layer>
+	</div>
+
+	<!--************************************ Menu_№1 ************************************-->
+	<div id=box style=left:251> 
+		<table border="0" id=blackbox width="100"> 
+			<tr><td><a href="/" >О нас...</a></td></tr>
+			<tr><td><a href='!!!!!!'>Тематика</a></td></tr>
+		</table>
+	</div>
+
+	<!--************************************ Menu_№2 ************************************-->
+	<div id=box style=left:352> 
+		<table border="0" id=blackbox width="100">
+			<tr><td><a href='!!!!!!'>Link</a></td></tr>
+			<tr><td><a href='http://texiko.by.ru' >Link</a></td></tr>
+			<tr><td><a href='!!!!!!' >Link</a></td></tr>
+		</table>
+	</div>
+	
+	<!--************************************ Menu_№3 ************************************-->
+	
+	<div id=box style=left:452> 
+	<table border="0" id=blackbox width="100"> 
+	<tr><td><a href='!!!!!!' >Link</a></td></tr>
+	<tr><td><a href='!!!!!!' >Link</a></td></tr>
+	<tr><td><a href='http://texiko.by.ru' >Link</a></td></tr>
+	<tr><td><a href='!!!!!!' >Link</a></td></tr>
+	<tr><td><a href='!!!!!!' >Link</a></td></tr> 
+	</table>
+	</div>
+
+	<!--************************************ Menu_№4 ************************************-->
+	<div id=box style=left:552> 
+		<table border="0" id=blackbox width="100"> 
+			<tr><td><a href='!!!!!!' >Link</a></td></tr>
+			<tr><td><a href='http://texiko.by.ru' >Link</a></td></tr>
+			<tr><td><a href='!!!!!!' >Link</a></td></tr>
+			<tr><td><a href='!!!!!!' >Link</a></td></tr>
+		</table>
+	</div>
+
+	<!--************************************ Menu_№5 ************************************-->
+	<div id=box style=left:652> 
+		<table border="0" id=blackbox width="99">
+			<tr><td><a href='!!!!!!' >Link</a></td></tr>
+			<tr><td><a href='!!!!!!' >Link</a></td></tr>
+			<tr><td><a href='http://texiko.by.ru' >Link</a></td></tr>
+		</table>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0069)http://www.ncn.ru/~dimas/libz/lib_prog/javascript/js_tut/glava2_6.htm -->
+<HTML><HEAD><TITLE>Стеки гипертекстовых ссылок</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+<STYLE type=text/css>A.noneline {
+	FONT-FAMILY: Arial, Serif; TEXT-DECORATION: none
+}
+FONT.arial {
+	FONT-FAMILY: Arial, Serif
+}
+TD.arial {
+	FONT-FAMILY: Arial, Serif
+}
+TH.arial {
+	FONT-FAMILY: Arial, Serif
+}
+PRE {
+	COLOR: navy; FONT-FAMILY: Monospace
+}
+SAMP {
+	COLOR: navy; FONT-FAMILY: Monospace
+}
+TT {
+	COLOR: navy; FONT-FAMILY: Monospace
+}
+VAR {
+	COLOR: navy; FONT-FAMILY: Monospace
+}
+</STYLE>
+
+<META content="MSHTML 5.00.3700.6699" name=GENERATOR></HEAD>
+<BODY aLink=#ff0000 bgColor=#fff5ee link=#ff0000 text=#000000 
+vLink=#a52a2a><BASEFONT>
+<CENTER>
+<TABLE border=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR vAlign=top>
+    <TD class=arial><A href="http://www.citforum.ru/"><IMG 
+      alt="Server for Information Technologies" border=0 height=50 
+      src="Стеки гипертекстовых ссылок.files/logo3D.gif" width=150></A><BR></TD>
+    <TD align=right class=arial><FONT size=-2>Сервер поддерживается<BR><A 
+      class=noneline href="http://www.citmgu.ru/">Центром Информационных 
+      Технологий</A><BR>(095) 932-9212, 932-9213, 939-0783<BR>E-mail: <A 
+      class=noneline 
+      href="mailto:info@citforum.ru?Subject='From page topic CIT-FORUM'">mailto:info@citforum.ru?Subject='From 
+      page topic CIT-FORUM'</A></FONT> </TD>
+  <TR>
+    <TH class=arial colSpan=2><FONT color=#000080 size=2><A class=noneline 
+      href="http://www.citforum.ru/">Сервер Информационных Технологий</A> 
+      содержит море(!) аналитической информации</FONT> 
+      <HR noShade>
+    </TH></TR></TBODY></TABLE></CENTER>
+<H4>2.6. Стеки гипертекстовых ссылок</H4>
+<P align=justify>Не обошли своим внимание авторы JavaScript и стеки 
+гипертекстовых ссылок. В язык теперь введен новый тип объектов типа Area. Area - 
+это элемент контейнера MAP, который определяет client-site imagemap. Собственно, 
+главное достоинство такого объекта состоит в том, что гипертекстовые ссылки, 
+которые определены в AREA, стали доступны для переопределения. Они появляются в 
+массиве обычных ссылок страницы, и можно как получить значение URL, так и 
+переопределить его. К объекту AREA нельзя обратиться по имени. Можно 
+использовать только индекс массива гипертекстовых ссылок документа. 
+<P align=justify>В контексте стека гипертекстовых ссылок интересно рассмотреть 
+еще одну возможность JavaScript, связанную с переходом по гипертекстовой ссылке 
+вообще. В обычном случае параметр HREF контейнера A должен иметь какое-нибудь 
+значение. Если, например, по событию onClick необходимо открыть новое окно и в 
+старом сохранить отображенный документ, то его URL следует указывать в качестве 
+значения HREF. В противном случае, в старое окно будет загружена пустая 
+страница, если HREF=" ". В новой версии JavaScript введена функция void. Точнее 
+тип void, который означает отсутствие какого-либо значения. Если нам необходимо 
+выполнить некоторые действия при выборе гипертекстовой ссылки, но при этом не 
+перегружать текущие страницы, то в параметре HREF можно указать конструкцию: <PRE>	&lt;A HREF="javascript:void(0)"&gt;kuku&lt;/A&gt;</PRE>
+<P align=justify>Таким приемом часто пользуются при программировании событий, 
+связанных с проходом манипулятора мыши через поле гипертекстовой ссылки. 
+<P>
+<CENTER>
+<P><FONT size=-1><A 
+href="http://www.ncn.ru/~dimas/libz/lib_prog/javascript/js_tut/glava2_5.htm">Назад</A> 
+| <A 
+href="http://www.ncn.ru/~dimas/libz/lib_prog/javascript/js_tut/index.htm">Содержание</A> 
+| <A 
+href="http://www.ncn.ru/~dimas/libz/lib_prog/javascript/js_tut/glava2_7.htm">Вперед</A></FONT></CENTER></P>
+<P></P>
+<HR noShade>
+
+<CENTER><FONT class=arial size=1>Comments: <A class=noneline 
+href="mailto:info@citmgu.ru?Subject='From bottom of CIT FORUM'">mailto:info@citmgu.ru?Subject='From 
+bottom of CIT FORUM'</A><BR>Copyright © <A class=noneline 
+href="http://www.citmgu.ru/">CIT</A> </FONT></CENTER></BASEFONT></BODY></HTML>

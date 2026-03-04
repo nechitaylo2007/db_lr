@@ -1,0 +1,233 @@
+<!--***************************************************************-->
+1) Между <HEAD> и </HEAD> вставьте текст из формы.
+2) В тэг BODY вставьте onLoad="doneLoading()" (Например <body onLoad="doneLoading()">)
+3) Между <BODY>и</BODY> в то место, в котором хотите поместить кнопку :
+<form name="form1" METHOD=post action="mailto:ЗДЕСЬ ВАШ EMAIL ?SUBJECT=ВАШ SUBJECT" enctype="text/plain" onSubmit="return checkForDuplicate()">
+<input type="hidden" name="PAGE" value="none">
+<input type="hidden" name="REFERRER" value="none">
+<input type="hidden" name="PLATFORM" value="none">
+<input type="hidden" name="LOADING_TIME" value="none">
+<input type="submit" name="SUBMITTER" value="CLICK ME">
+</form>
+
+<script language="JavaScript">
+var startTime = new Date();
+startTime = startTime.getTime();
+var submissions = 0;
+function checkForDuplicate() {
+ if (document.form1) {
+  document.form1.REFERRER.value = document.referrer;
+  document.form1.PLATFORM.value = navigator.appName
+   + " " + navigator.appVersion;
+  submissions++;
+  if (submissions > 1)
+   return false;
+  else
+   return true;
+ } else {
+  return false;
+ }
+} 
+
+function doneLoading() {
+ var stopTime = new Date();
+ stopTime = stopTime.getTime();
+ document.form1.LOADING_TIME.value = ((stopTime - startTime) / 1000)
+  + " seconds";
+ document.form1.PAGE.value = document.title;
+ document.form1.SUBMITTER.click(); 
+}
+
+</script>
+<!--***************************************************************-->
+
+<!--***************************************************************-->
+1) <script> 
+alt         = new Array; 
+src_on  = new Array; 
+src_off  = new Array; 
+url         = new Array; 
+cache    = new Array; 
+//Replacement
+ src_on[0]='IMG_ON_0'; 
+ src_off[0]='IMG_OFF_0'; 
+        url[0]='URL_0'; 
+        alt[0]='ALT_0'; 
+
+ src_on[1]='IMG_ON_1'; 
+ src_off[1]='IMG_OFF_1'; 
+        url[1]='URL_1'; 
+        alt[1]='ALT_1'; 
+
+ src_on[2]='IMG_ON_2'; 
+ src_off[2]='IMG_OFF_2'; 
+        url[2]='URL_2'; 
+        alt[2]='ALT_2'; 
+
+     target   ='target_name'; 
+     name   ='unique_name'; 
+     border ='border_thickness'; 
+     img_on= number_of_image; 
+//End replacement 
+
+for(i=0;i<=url.length-1;i++) 
+{ 
+     cache[i]       = new Image(); 
+     cache[i].src = src_off[i]; 
+
+     cache[url.length+i]      = new Image(); 
+     cache[url.length+i].src = src_on[i]; 
+} 
+
+function img_check(this_num) 
+     { 
+          for(i=0;i<=url.length-1;i++) 
+               { 
+                    if(document.images[name+i].src!=src_off[i]) 
+                         { 
+                              document.images[name+i].src=src_off[i]; 
+                         } 
+               } 
+
+          document.images[name+this_num].src=src_on[this_num]; 
+     } 
+  
+
+function print_img(image_num) 
+     { 
+          if(image_num!=img_on) 
+               { 
+                    img_for_write=src_off[image_num]; 
+               } 
+          else 
+               { 
+                    img_for_write=src_on[image_num]; 
+               } 
+     document.write('<a href='+url[image_num]+ 
+     ' onClick=\'img_check('+image_num+ 
+     ')\' target=\''+target+'\'><img  src='+img_for_write+ 
+     ' name='+name+image_num+' border='+border+' alt=\''+ 
+     alt[image_num]+'\'></a>'); 
+  
+     } 
+
+</script> 
+
+2) Между <body> и </body>) вставьте:
+<script>print_img(0)</script><br>
+<script>print_img(1)</script><br>
+<script>print_img(2)</script><br>  
+
+Заменить:
+
+IMG_ON_0, IMG_ON_1, IMG_ON_2 адреса картинок для состояния "включено" 
+IMG_OFF_0, IMG_OFF_1, IMG_OFF_2 адреса картинок для состояния "выключено" 
+URL_0, URL_1, URL_2 адреса страниц для каждой кнопки 
+ALT_0, ALT_1, ALT_2 текст всплывающих подсказок для кнопок 
+target_name название фрейма, в котором сменяются страницы после нажатия кнопок меню(параметр NAME в тэге FRAME) 
+unique_name какое-нибудь уникальное имя, служащее для идентификации изображений 
+number_of_image номер той кнопки, которя включена в самом начале(счет начинается с нуля) 
+border_thickness толщина рамки вокруг кнопки 
+
+Строки <script>print_img(номер кнопки)</script> заменяются на картинки.
+Для того, чтобы добавить кнопки(в примере скрипта их только 3), нужно просто вставить
+ src_on[N]='Адрес изображения для включенной кнопки'; 
+ src_off[N]='Адрес изображения для выключенной кнопки'; 
+        url[N]='Адрес страницы'; 
+        alt[N]='Подсказка'; 
+между строчками //Replacement и //End replacement в той части скрипта, которая расположена в тэге <head>, и в нужном месте тэга <body> вставить: 
+<script>print_img(N)</script> 
+N - это номер кнопки (в приведенном примере скрипта следующий номер - 4)
+<!--***************************************************************-->
+
+<!--***************************************************************-->
+<!--***************************************************************-->
+<script language="JavaScript">
+theTime = new Date();
+theHour = theTime.getHours();
+if(theHour>6&&theHour<18){
+document.write('<body background ="day.gif" text="black">');
+}
+else{
+document.write('<body background ="night.gif" text="white">');
+}
+</script>  
+
+Этот скрипт печатает тэг <BODY>, поэтому в документе, использующем этот скрипт этот тэг не нужен. Но в конце текста страницы нужно вставить </BODY>. 
+
+
+2. Текст, выделенный красным, замените своим:
+day.gif - фон днем;
+night.gif - фон ночью;
+black - цвет текста днем;
+white - цвет текста ночью;
+
+Зеленым и красным цветом выделен печатающийся тэг <BODY> , если вам нужно включить в BODY еще что-нибудь, то вписывайте в эту часть скрипта. 
+<!--***************************************************************-->
+
+<!--***************************************************************-->
+<script>
+function scrollit(){ 
+for (I=1; I<=500; I++){
+self.scroll(1,I)
+}
+}
+</script>
+ 
+2) Между <BODY>и</BODY> вставьте:
+ 
+<CENTER>
+<a href="http://www.chat.ru/~jsc/" ONMOUSEOVER = "scrollit()">
+<IMG border=1 width=400 height=50 SRC = "http://www.chat.ru/~jsc/bgbbm.gif" ALT="Картинка">
+</a></CENTER>
+ 
+3. Русский текст замените своим
+ 
+4. Красный текст замените на адрес вашей картинки
+ 
+Если картинка внизу, то зеленый текст замените на 
+I=500; >=1; I--
+Тогда прокрутка будет снизу вверх
+<!--***************************************************************-->
+
+<!--***************************************************************-->
+<SCRIPT LANGUAGE="JavaScript"> 
+function startTimer(){ 
+        var time= new Date(); 
+        hours= time.getHours(); 
+        mins= time.getMinutes(); 
+        secs= time.getSeconds(); 
+        closeTime=hours*3600+mins*60+secs; 
+        closeTime+=10;  
+        Timer(); 
+} 
+function Timer(){ 
+        var time= new Date(); 
+        hours= time.getHours(); 
+        mins= time.getMinutes(); 
+        secs= time.getSeconds(); 
+        curTime=hours*3600+mins*60+secs 
+        if(curTime>=closeTime) 
+        location = "Ваша ссылка на следущую страницу" 
+        else 
+                timeLeft(); 
+} 
+
+function timeLeft(){ 
+        count = closeTime-curTime; 
+        document.timer.counter.value = count + " secs." 
+        window.setTimeout("Timer()",1000) 
+} 
+
+</SCRIPT>
+ 
+
+  
+2. В тексте скрипта в строке location замените русский текст на ссылку следующей станицы
+3. В строке closeTime+=10 число 10 замените на свое время в секундах.
+4. В тэг BODY вставьте onLoad="startTimer()"  Например <body onLoad="startTimer()">
+5. В тело (между <BODY>и</BODY>)  вставьте:
+  
+<form name="timer"> 
+<input type=text value="" name="counter" size=7></form>  
+<!--***************************************************************-->

@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0069)http://www.ncn.ru/~dimas/libz/lib_prog/javascript/js_tut/glava2~1.htm -->
+<HTML><HEAD><TITLE>Встраивание в HTML-документ</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+<STYLE type=text/css>A.noneline {
+	FONT-FAMILY: Arial, Serif; TEXT-DECORATION: none
+}
+FONT.arial {
+	FONT-FAMILY: Arial, Serif
+}
+TD.arial {
+	FONT-FAMILY: Arial, Serif
+}
+TH.arial {
+	FONT-FAMILY: Arial, Serif
+}
+PRE {
+	COLOR: navy; FONT-FAMILY: Monospace
+}
+SAMP {
+	COLOR: navy; FONT-FAMILY: Monospace
+}
+TT {
+	COLOR: navy; FONT-FAMILY: Monospace
+}
+VAR {
+	COLOR: navy; FONT-FAMILY: Monospace
+}
+</STYLE>
+
+<META content="MSHTML 5.00.3700.6699" name=GENERATOR></HEAD>
+<BODY aLink=#ff0000 bgColor=#fff5ee link=#ff0000 text=#000000 
+vLink=#a52a2a><BASEFONT>
+<CENTER>
+<TABLE border=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR vAlign=top>
+    <TD class=arial><A href="http://www.citforum.ru/"><IMG 
+      alt="Server for Information Technologies" border=0 height=50 
+      src="Встраивание в HTML-документ.files/logo3D.gif" width=150></A><BR></TD>
+    <TD align=right class=arial><FONT size=-2>Сервер поддерживается<BR><A 
+      class=noneline href="http://www.citmgu.ru/">Центром Информационных 
+      Технологий</A><BR>(095) 932-9212, 932-9213, 939-0783<BR>E-mail: <A 
+      class=noneline 
+      href="mailto:info@citforum.ru?Subject='From page topic CIT-FORUM'">mailto:info@citforum.ru?Subject='From 
+      page topic CIT-FORUM'</A></FONT> </TD>
+  <TR>
+    <TH class=arial colSpan=2><FONT color=#000080 size=2><A class=noneline 
+      href="http://www.citforum.ru/">Сервер Информационных Технологий</A> 
+      содержит море(!) аналитической информации</FONT> 
+      <HR noShade>
+    </TH></TR></TBODY></TABLE></CENTER>
+<H4>2.10. Встраивание в HTML-документ</H4>
+<P align=justify>Для встраивания скриптов в тело HTML-документа используется 
+контейнер SCRIPT. Не все программы просмотра способны распознавать и исполнять 
+скрипты, поэтому само тело скрипта помещается в контейнер комментария. Для 
+определенности рассмотрим небольшой пример: <I>
+<P align=justify>Пример 2.2 </I><PRE>	&lt;HTML&gt;
+	&lt;!--
+	Author:	Pavel Khramtsov
+	Date:	March 5, 1996
+	--&gt;
+	&lt;HEAD&gt;
+	&lt;TITLE&gt;Registration&lt;/TITLE&gt;
+	&lt;SCRIPT LANGUAGE="JavaScript"&gt;
+	&lt;!-- The JavaScript Functions Definition
+	function help_win()
+	            {
+	Help = window.open("reg_help.htm","Help","scrollbars=yes,resizable=yes")
+	            }
+	function main_menu()
+	            {
+	             Main_menu = window.open("main_m.htm","Main_menu")
+	            }
+	// The end of JavaScript Functions Definition --&gt;
+	&lt;/SCRIPT&gt;
+	&lt;/HEAD&gt;
+	&lt;BODY&gt;
+	&lt;CENTER&gt;
+	&lt;TABLE&gt;
+	&lt;TR&gt;&lt;TH&gt;&lt;IMG 	SRC="radleg3.gif"&gt;&lt;/TH&gt;&lt;TH&gt;&lt;H2&gt;ISTC.
+	Project	RADLEG(#245)&lt;/H2&gt;
+	RRC "Kurchatov Institute"&lt;BR&gt;
+	&lt;I&gt;Dec, 25, 1995&lt;/I&gt;
+	&lt;/TH&gt;&lt;/TR&gt;
+	&lt;/TABLE&gt;
+	&lt;/CENTER&gt;
+	&lt;HR&gt;
+	&lt;CENTER&gt;
+	&lt;h2&gt;Registration Form&lt;/h2&gt;
+	&lt;hr&gt;
+	......
+	Текст страницы.
+	.....
+	&lt;hr&gt;
+	&lt;FORM NAME=help_call&gt;
+	&lt;TABLE BORDER=0&gt;
+	&lt;TR&gt;
+	&lt;TD&gt;&lt;INPUT NAME=next TYPE=button VALUE=Next onClick="main_menu()"&gt;&lt;/TD&gt;
+	&lt;TD&gt;&lt;INPUT NAME=help TYPE=button VALUE=Help onClick="help_win()"&gt;&lt;/TD&gt;
+	&lt;/TR&gt;
+	&lt;/TABLE&gt;
+	&lt;/FORM&gt;
+	&lt;hr&gt;
+	&lt;/CENTER&gt;
+	&lt;/BODY&gt;
+	&lt;/HTML&gt;</PRE>
+<P align=justify>В данном примере в заголовок документа (контейнер HEAD) включен 
+контейнер SCRIPT. До недавнего времени атрибут LANGUAGE в этом контейнере не 
+являлся обязательным. Но с момента появления VBSCRIPT смысл в указании типа 
+языка появился - Navigator не понимает скриптов на других языках. Отсутствие 
+атрибута может привести к ошибкам при отображении гипертекстовых страниц. 
+<P align=justify>Далее в тексте страницы определен комментарий, в который 
+включен текст скрипта. Начинается комментарий со строки: <PRE>	&lt;!-- The JavaScript Functions Definition</PRE>и кончается строкой: <PRE>	// The end of JavaScript Functions Definition --&gt;</PRE>
+<P align=justify>Внутри контейнера скрипта определены две функции пользователя: 
+help_win() и main_menu(). Смысл этих функций достаточно прозрачен. Help_win() 
+предназначена для организации контекстно зависимого help, а main_menu() 
+осуществляет допуск пользователя к главному меню Website. Обе функции используют 
+один и тот же метод open (встроенную в JavaScript функцию, которая определена 
+над объектом window) для того, чтобы открыть новое окно Netscape Navigator и 
+загрузить в него гипертекстовые документы. При этом функция main_menu порождает 
+стандартное окно (с кнопочками, иконками и т.п.), а функция help_win() окно без 
+стандартных атрибутов. У этого окна имеются только линейки прокрутки (scroll 
+bars). 
+<P align=justify>Вызов функций осуществляется после нажатия на соответствующую 
+кнопку, которые определены в HTML-форме help_call. Таким образом выполнение 
+функций будет осуществлено только в том случае, если произойдет событие, 
+описанное атрибутом onClick в контейнере INPUT соответствующего поля формы. 
+<P align=justify>Если быть более точным, то приведенный пример - это фрагмент, 
+реализующий регистрацию пользователя. К моменту его выполнения окно главного 
+меню уже открыто, поэтому создание этого окна при выборе кнопки "NEXT" не 
+происходит, а текст загружается в уже открытое окно. 
+<P>
+<CENTER>
+<P><FONT size=-1><A 
+href="http://www.ncn.ru/~dimas/libz/lib_prog/javascript/js_tut/glava2_9.htm">Назад</A> 
+| <A 
+href="http://www.ncn.ru/~dimas/libz/lib_prog/javascript/js_tut/index.htm">Содержание</A> 
+| <A 
+href="http://www.ncn.ru/~dimas/libz/lib_prog/javascript/js_tut/glava2~2.htm">Вперед</A></FONT></CENTER></P>
+<P></P>
+<HR noShade>
+
+<CENTER><FONT class=arial size=1>Comments: <A class=noneline 
+href="mailto:info@citmgu.ru?Subject='From bottom of CIT FORUM'">mailto:info@citmgu.ru?Subject='From 
+bottom of CIT FORUM'</A><BR>Copyright © <A class=noneline 
+href="http://www.citmgu.ru/">CIT</A> </FONT></CENTER></BASEFONT></BODY></HTML>

@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0069)http://www.ncn.ru/~dimas/libz/lib_prog/javascript/js_tut/glava1_4.htm -->
+<HTML><HEAD><TITLE>Использование таблиц в дизайне страницы</TITLE>
+<META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+<STYLE type=text/css>A.noneline {
+	FONT-FAMILY: Arial, Serif; TEXT-DECORATION: none
+}
+FONT.arial {
+	FONT-FAMILY: Arial, Serif
+}
+TD.arial {
+	FONT-FAMILY: Arial, Serif
+}
+TH.arial {
+	FONT-FAMILY: Arial, Serif
+}
+PRE {
+	COLOR: navy; FONT-FAMILY: Monospace
+}
+SAMP {
+	COLOR: navy; FONT-FAMILY: Monospace
+}
+TT {
+	COLOR: navy; FONT-FAMILY: Monospace
+}
+VAR {
+	COLOR: navy; FONT-FAMILY: Monospace
+}
+</STYLE>
+
+<META content="MSHTML 5.00.3700.6699" name=GENERATOR></HEAD>
+<BODY aLink=#ff0000 bgColor=#fff5ee link=#ff0000 text=#000000 
+vLink=#a52a2a><BASEFONT>
+<CENTER>
+<TABLE border=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR vAlign=top>
+    <TD class=arial><A href="http://www.citforum.ru/"><IMG 
+      alt="Server for Information Technologies" border=0 height=50 
+      src="Использование таблиц в дизайне страницы.files/logo3D.gif" 
+      width=150></A><BR></TD>
+    <TD align=right class=arial><FONT size=-2>Сервер поддерживается<BR><A 
+      class=noneline href="http://www.citmgu.ru/">Центром Информационных 
+      Технологий</A><BR>(095) 932-9212, 932-9213, 939-0783<BR>E-mail: <A 
+      class=noneline 
+      href="mailto:info@citforum.ru?Subject='From page topic CIT-FORUM'">mailto:info@citforum.ru?Subject='From 
+      page topic CIT-FORUM'</A></FONT> </TD>
+  <TR>
+    <TH class=arial colSpan=2><FONT color=#000080 size=2><A class=noneline 
+      href="http://www.citforum.ru/">Сервер Информационных Технологий</A> 
+      содержит море(!) аналитической информации</FONT> 
+      <HR noShade>
+    </TH></TR></TBODY></TABLE></CENTER>
+<H4>1.4. Использование таблиц в дизайне страницы</H4>
+<P align=justify>Приятное свойство таблиц состоит в том, что если вы захотите, 
+то можете сделать их границы невидимыми. Это позволяет с помощью тага 
+&lt;ТАВLЕ&gt; красиво размещать на странице текст и графику. До сих пор таг 
+&lt;ТАВLЕ&gt; остается единственным мощным средством форматирования в HTML. 
+Дизайнеры Web-страниц сейчас обладают практически такой же свободой 
+использования &lt;пустого пространства&gt;, что и создатели печатных страниц. 
+Таблицы в большей мере, чем что-либо другое, помогают отойти от иерархического 
+размещения текста на Web-страницах. 
+<P align=justify>Если броузер вообще поддерживает таблицы, он обычно правильно 
+отображает наиболее интересные эффекты, полученные с помощью таблиц. <I>
+<P align=justify>Пример 1.20 </I><PRE>	&lt;HTML&gt; 
+	&lt;BODY&gt; 
+	&lt;CENTER&gt; 
+	&lt;TABLE CELLPADDING=10 CELLSPACING=0 BORDER=16&gt; 
+	&lt;TR&gt; 
+	&lt;TD ALIGN=CENTER&gt; 
+	&lt;H1&gt;ПЕРФОРАТОР&lt;/H1&gt; 
+	&lt;H3&gt;Только сегодня!&lt;/H3&gt; 
+	&lt;TABLE BORDER WIDTH=100%&gt; 
+	&lt;TR&gt;&lt;TD ALIGN=CENTER&gt;&lt;I&gt;Почти бесплатно!&lt;/I&gt;&lt;/TD&gt;
+	&lt;/TR&gt; 
+	&lt;/TABLE&gt; 
+	&lt;/TD&gt; 
+	&lt;/TR &gt;
+	&lt;/TABLE&gt;
+	&lt;/CENTER &gt;
+	&lt;/BODY&gt;
+	&lt;/HTML&gt;
+</PRE>
+<P align=center><IMG 
+src="Использование таблиц в дизайне страницы.files/image416.gif"> <I>
+<P align=center>Рис. 1.21. Создание выпуклых элементов</I> 
+<H4><I>Создание разноцветных таблиц </I></H4>
+<P align=justify>Ведущие броузеры, позволяют отображать некоторые цвета. Есть 
+несколько способов раскрасить таблицу, в основном они зависят от используемого 
+броузера. 
+<H4><I>Цветные границы в Netscape Navigator </I></H4>
+<P align=justify>Вы не только можете окружить таблицу красивой рамкой, но еще и 
+задать для нее цвет, отличный от цветов текста и фона. Создайте простой серый 
+GIF (или любой GIF, который вы хотели бы иметь в качестве фона) и определите его 
+в таге &lt;ВODY&gt; как фон страницы. Затем задайте цвет фона страницы. В 
+результате ваш таг &lt;ВОDY&gt; будет выглядеть примерно так: <PRE>	&lt;BODY ВАСКGROUND="сооlbg.gif" ВGCOLOR=" # FF0000"&gt;  </PRE>
+<P align=justify>Вы создали двойной фон - GIF и заданный цвет. В результате 
+фоновый цвет будет виден на всех границах таблиц и горизонтальных линиях 
+(&lt;НR&gt;). Вне зависимости от того, является ли ваш фоновый GIF серым или 
+нет, цветные линии и границы таблиц будут заметно выделяться. Если фоновый GIF 
+не слишком сложно устроен, время загрузки страницы лишь немного возрастет. На 
+приведенном ниже примере показано какие, широкие возможности дает использование 
+цвета в HTML и в частности в таблицах. <I>
+<P align=justify>Пример 1.21 </I><PRE>	&lt;HTML&gt; 
+	&lt;BODY BACKGROUND="bgr.gif"  BGCOLOR="YELLOW" &gt; 
+	&lt;CENTER&gt;
+	&lt;TABLE BORDER=3 CELLPADDING=20&gt;
+	&lt;CAPTION ALIGN=TOP&gt;&lt;H2&gt;Как просверлить бетонную
+	 стену&lt;/H2&gt;&lt;/CAPTION&gt;
+	&lt;TR&gt;
+	&lt;TD BGCOLOR=GRAY&gt; 
+	&lt;TABLE CELLPADDING=10 CELLSPACING=0 BORDER=16&gt; 
+	&lt;TD BGCOLOR=RED ALIGN=CENTER&gt; 
+	&lt;H1&gt;ПЕРФОРАТОР&lt;/H1&gt; 
+	&lt;H3&gt;Только сегодня!&lt;/H3&gt; 
+	&lt;TABLE BORDER WIDTH=100%&gt; 
+	&lt;TR&gt; 
+	&lt;TD BGCOLOR=AQUA ALIGN=CENTER&gt;&lt;I&gt;Почти бесплатно!&lt;/I&gt;&lt;/TD&gt;
+	&lt;/TR&gt; 
+	&lt;/TABLE&gt; 
+	&lt;/TABLE&gt;
+	&lt;TD WIDTH=50% BGCOLOR=BROWN ALIGN=CENTER&gt;
+	&lt;IMG SRC="perfor1.gif" WIDTH=200 HEIGHT=150&gt;
+	&lt;/TD&gt; 
+	&lt;/TR&gt;
+	&lt;TR&gt;
+	&lt;TD BGCOLOR=PINK&gt;
+	&lt;FONT SIZE=6 COLOR=BLUE&gt;От 6 до 20 мм&lt;/FONT&gt;
+	&lt;/TD&gt;
+	&lt;TD  BGCOLOR=BLUE&gt;
+	&lt;FONT SIZE=6 COLOR=PINK&gt;Просверлим все&lt;/FONT&gt;
+	&lt;/TD&gt;
+	&lt;/TR&gt;
+	&lt;/TABLE&gt; 
+	&lt;/CENTER &gt; 
+	&lt;/BODY&gt; 
+	&lt;/HTML&gt;
+</PRE>
+<P align=center><IMG 
+src="Использование таблиц в дизайне страницы.files/image417.gif"> <I>
+<P align=center>Рис. 1.22. Пример разноцветной таблицы</I> 
+<P>
+<CENTER>
+<P><FONT size=-1><A 
+href="http://www.ncn.ru/~dimas/libz/lib_prog/javascript/js_tut/glava1_3.htm">Назад</A> 
+| <A 
+href="http://www.ncn.ru/~dimas/libz/lib_prog/javascript/js_tut/index.htm">Содержание</A> 
+| <A 
+href="http://www.ncn.ru/~dimas/libz/lib_prog/javascript/js_tut/glava1_5.htm">Вперед</A></FONT></CENTER></P>
+<P></P>
+<HR noShade>
+
+<CENTER><FONT class=arial size=1>Comments: <A class=noneline 
+href="mailto:info@citmgu.ru?Subject='From bottom of CIT FORUM'">mailto:info@citmgu.ru?Subject='From 
+bottom of CIT FORUM'</A><BR>Copyright © <A class=noneline 
+href="http://www.citmgu.ru/">CIT</A> </FONT></CENTER></BASEFONT></BODY></HTML>
